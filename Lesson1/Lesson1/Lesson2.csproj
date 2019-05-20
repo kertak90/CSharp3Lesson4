@@ -126,6 +126,7 @@
     <Compile Include="MessageNotification.xaml.cs">
       <DependentUpon>MessageNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValidationRules\regExValidationRule.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

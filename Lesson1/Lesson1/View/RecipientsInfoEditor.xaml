@@ -3,10 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vr="clr-namespace:Lesson1.ValidationRules"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              xmlns:local="clr-namespace:Lesson1.View"
              mc:Ignorable="d" Height="438.559" Width="275.636"
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
-    <Grid >
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="2,5,15,3"></Setter>
+                <Setter Property="Validation.ErrorTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <DockPanel>
+                                <fa:ImageAwesome Height="16" DockPanel.Dock="Right"
+                                                 Width="14" Foreground="Red" Icon="Warning"
+                                                 ToolTip="{Binding AdornedElement.(Validation.Errors)[0].ErrorContent, ElementName=AdornedElement}"/>
+                                <Border BorderBrush="Red" BorderThickness="4" Margin="1">
+                                    <AdornedElementPlaceholder Name="AdornedElement"/>
+                                </Border>
+                            </DockPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="Bisque"/>
+                        <Setter Property="Background" Value="AliceBlue"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
@@ -21,9 +48,19 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Имя"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Email"/>
 
-        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding SelectedRecepient.Id}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedRecepient.Name}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding SelectedRecepient.Email}"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding SelectedRecepient.Id, NotifyOnValidationError=True}" IsReadOnly="False"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedRecepient.Name, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" >
+            <TextBox.Text>
+                <Binding Path="SelectedRecepient.Email" NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <NotifyDataErrorValidationRule/>
+                        <ExceptionValidationRule/>
+                        <vr:regExValidationRule Pattern="\w+@\w+\.\w+" ErrorMessage="Неверный формат адреса электронной почты"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
         <UniformGrid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Button Margin="0,10,0,0"
