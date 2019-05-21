@@ -108,7 +108,7 @@ namespace MailSenderLib.Linq2SQL
 		{
 			get
 			{
-				return this._Id;
+				return base.Id;
 			}
 			set
 			{
@@ -116,7 +116,7 @@ namespace MailSenderLib.Linq2SQL
 				{
 					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._Id = value;
+					base.Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
 				}

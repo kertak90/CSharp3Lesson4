@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MailSenderDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq2SQL\Recepient.cs" />
     <Compile Include="MVVM\LambdaCommand.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="Program.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Services\Interfaces\IServerData.cs" />
     <Compile Include="Services\Interfaces\IShedulerTasksData.cs" />
     <Compile Include="Services\Linq2SQL\RecepientsDataLinq2SQL.cs" />
+    <Compile Include="Services\StringEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
