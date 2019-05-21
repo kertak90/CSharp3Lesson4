@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderLib", "MailSender
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPicker", "TestPicker\TestPicker.csproj", "{F26C1FA4-B2B3-4535-9AC7-64CAA2D36D7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.Lib.Tests", "MailSender.Lib.Tests\MailSender.Lib.Tests.csproj", "{988564EA-9282-4AB9-BED3-1977A75B141F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,26 @@ Global
 		{F26C1FA4-B2B3-4535-9AC7-64CAA2D36D7A}.Release|x64.Build.0 = Release|Any CPU
 		{F26C1FA4-B2B3-4535-9AC7-64CAA2D36D7A}.Release|x86.ActiveCfg = Release|Any CPU
 		{F26C1FA4-B2B3-4535-9AC7-64CAA2D36D7A}.Release|x86.Build.0 = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|x64.Build.0 = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Debug|x86.Build.0 = Debug|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|ARM.Build.0 = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|ARM64.Build.0 = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|x64.ActiveCfg = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|x64.Build.0 = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|x86.ActiveCfg = Release|Any CPU
+		{988564EA-9282-4AB9-BED3-1977A75B141F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -79,6 +79,7 @@
     <Compile Include="Services\Interfaces\IServerData.cs" />
     <Compile Include="Services\Interfaces\IShedulerTasksData.cs" />
     <Compile Include="Services\Linq2SQL\RecepientsDataLinq2SQL.cs" />
+    <Compile Include="Services\StringEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

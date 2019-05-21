@@ -10,7 +10,7 @@ namespace MailSenderLib.Services.InMemory
 {
     public abstract class DataInMemory<T> : IDataService<T> where T : BaseEntity
     {
-        private readonly List<T> _Items = new List<T>();
+        protected readonly List<T> _Items = new List<T>();
         public int Add(T item)
         {
             if (_Items.Contains(item)) return 0;
@@ -26,6 +26,8 @@ namespace MailSenderLib.Services.InMemory
 
         public T GetById(int id)
         {
+            if (id < 0)
+                throw new ArgumentOutOfRangeException(nameof(id), id, "Значение id должно быть юольше 0");
             return _Items.FirstOrDefault(item => item.Id == id);
         }
         

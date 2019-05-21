@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace MailSenderLib.Services.InMemory
 {
-    class RecipientsDataInMemory : DataInMemory<Recepients>, IRecepientsData
+    public class RecipientsDataInMemory : DataInMemory<Recepients>, IRecepientsData
     {
+        public RecipientsDataInMemory()
+        {
+            _Items.AddRange(TestData.Senders.Select((s, i) => new Recepients{Id = i+1, Name = s.Name, Email = s.Email}));
+        }
+
         public override void Edit(Recepients item)
         {
             var db_item = GetById(item.Id);
